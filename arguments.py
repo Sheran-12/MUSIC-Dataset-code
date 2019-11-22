@@ -39,7 +39,7 @@ class ArgParser(object):
                             help="whether to use bianry masks")
         parser.add_argument('--mask_thres', default=0.5, type=float,
                             help="threshold in the case of binary masks")
-        parser.add_argument('--loss', default='l1',
+        parser.add_argument('--loss', default='bce',
                             help="loss function to use")
         parser.add_argument('--weighted_loss', default=0, type=int,
                             help="weighted loss")
@@ -90,9 +90,9 @@ class ArgParser(object):
         parser.add_argument('--mode', default='train',
                             help="train/eval")
         parser.add_argument('--list_train',
-                            default='data/train.csv')
+                            default='data/train_dummy.csv')
         parser.add_argument('--list_val',
-                            default='data/val.csv')
+                            default='data/val_dummy.csv')
         parser.add_argument('--dup_trainset', default=100, type=int,
                             help='duplicate so that one epoch has more iters')
 

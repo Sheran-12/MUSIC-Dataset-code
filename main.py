@@ -8,8 +8,9 @@ import torch
 import torch.nn.functional as F
 import numpy as np
 import scipy.io.wavfile as wavfile
-from scipy.misc import imsave
-from mir_eval.separation import bss_eval_sources
+# from scipy.misc import imsave
+# from mir_eval.separation import bss_eval_sources
+# clear
 
 # Our libs
 from arguments import ArgParser
@@ -532,7 +533,7 @@ if __name__ == '__main__':
     parser = ArgParser()
     args = parser.parse_train_arguments()
     args.batch_size = args.num_gpus * args.batch_size_per_gpu
-    args.device = torch.device("cpu")
+    args.device = torch.device("cuda")
 
     # experiment name
     if args.mode == 'train':
